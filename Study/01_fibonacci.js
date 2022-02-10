@@ -1,3 +1,26 @@
+// * 재귀함수 이용
+// 이 경우, 계속 반복해서 계산하게 된다.
+function firstFibo(n) {
+  if (n <= 2) {
+    return 1;
+  }
+  return firstFibo(n - 1) + firstFibo(n - 2);
+}
+
+// * 재귀함수 + 메모이제이션 이용
+function secondFibo(n, memo = []) {
+  if (!memo[n]) {
+    return memo[n];
+  }
+  if (n <= 2) {
+    return 1;
+  }
+  const res = secondFibo(n - 1, memo) + secondFibo(n - 2, memo);
+  memo[n] = res;
+  return res;
+}
+
+// * 반복문 이용
 function fibonaci(n) {
   const fibo = [1, 1];
 
