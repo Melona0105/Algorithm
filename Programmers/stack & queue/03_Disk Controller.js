@@ -1,3 +1,1 @@
-function solution(jobs) {
-  
-}
+function solution(jobs) {}
