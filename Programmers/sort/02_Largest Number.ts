@@ -1,5 +1,5 @@
-function solution(numbers) {
-  const answer = numbers
+function solution(numbers: number[]) {
+  const answer: string = numbers
     .map((el) => el + "")
     .sort((a, b) => +(b + a) - +(a + b))
     .join("");
