@@ -38,10 +38,3 @@ function solution(genres, plays) {
   }
   return result.map((el) => +el);
 }
-
-const a = solution(
-  ["classic", "pop", "classic", "classic", "pop"],
-  [500, 600, 150, 800, 2500]
-);
-
-console.log(a);

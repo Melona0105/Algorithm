@@ -7,6 +7,5 @@ function solution(participant, completion) {
       return p[i];
     }
   }
-  // 전부 같다면
   return p.pop();
 }
