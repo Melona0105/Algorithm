@@ -19,7 +19,7 @@ const sample3 = [
   [21, 22, 23, 24, 25],
 ];
 
-function solution(matrix) {
+function clockWise(matrix) {
   let result = [];
   for (let i = 0; i <= Math.ceil(matrix.length / 2); i++) {
     cutMatrixSide(matrix, i);
@@ -48,5 +48,5 @@ function solution(matrix) {
   return result.join(" ");
 }
 
-const aa = solution(sample3);
+const aa = clockWise(sample3);
 console.log(aa);
