@@ -1,7 +1,7 @@
 function convertFunc(input) {
-    var isNeg = false;
+    let isNeg = false;
     if (typeof input === "string") {
-        var result = 0;
+        let result = 0;
         if (input[0] === "-") {
             isNeg = true;
             result = searchString(1, input, result, isNeg);
@@ -12,14 +12,14 @@ function convertFunc(input) {
         return result;
     }
     else if (typeof input === "number") {
-        var result = "";
+        let result = "";
         if (input < 0) {
             result = "-";
             input = Math.abs(input);
         }
-        var numberLength = getNumLength(input);
-        for (var i = numberLength; i >= 1; i--) {
-            var now = Math.round(input / Math.pow(10, i - 1));
+        const numberLength = getNumLength(input);
+        for (let i = numberLength; i >= 1; i--) {
+            const now = Math.round(input / Math.pow(10, i - 1));
             result = result + numObj[now];
             input = input - now * Math.pow(10, i - 1);
         }
@@ -27,10 +27,10 @@ function convertFunc(input) {
     }
 }
 function searchString(startIndex, input, result, isNeg) {
-    for (var i = startIndex; i < input.length; i++) {
-        var now = input[i];
+    for (let i = startIndex; i < input.length; i++) {
+        const now = input[i];
         // 자릿수
-        var numlocation = Math.pow(10, input.length - i - 1);
+        const numlocation = Math.pow(10, input.length - i - 1);
         if (isNeg) {
             result = result + strObj[now] * numlocation * -1;
         }
@@ -41,15 +41,15 @@ function searchString(startIndex, input, result, isNeg) {
     return result;
 }
 function getNumLength(input) {
-    var current = 1;
-    var length = 0;
+    let current = 1;
+    let length = 0;
     while (current <= input) {
         current = current * 10;
         length++;
     }
     return length;
 }
-var strObj = {
+const strObj = {
     "1": 1,
     "2": 2,
     "3": 3,
@@ -59,9 +59,9 @@ var strObj = {
     "7": 7,
     "8": 8,
     "9": 9,
-    "0": 0
+    "0": 0,
 };
-var numObj = {
+const numObj = {
     "1": "1",
     "2": "2",
     "3": "3",
@@ -71,9 +71,9 @@ var numObj = {
     "7": "7",
     "8": "8",
     "9": "9",
-    "0": "0"
+    "0": "0",
 };
-var strToNum = convertFunc("-123");
+const strToNum = convertFunc("-123");
 // console.log(strToNum);
-var numToStr = convertFunc(-123);
+const numToStr = convertFunc(-123);
 console.log(numToStr);
